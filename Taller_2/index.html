@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 1 TypeScript</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+        <style>
+          .contenedor {
+              display: flex;
+              align-items: flex-start; /* Alinea la card con el inicio de la tabla */
+          }
+          table {
+              width: 60%; /* Controla el ancho de la tabla */
+              border-collapse: collapse;
+              margin-right: 20px; /* Espacio entre la tabla y la tarjeta */
+          }
+          th, td {
+              padding: 10px;
+              text-align: left;
+              border-bottom: 1px solid #ddd;
+          }
+          .card {
+              display: none; /* Oculto inicialmente */
+              border: 1px solid #ccc;
+              padding: 10px;
+              background-color: white;
+              width: 300px;
+              box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+          }
+          .card img {
+              width: 100%;
+              height: auto;
+          }
+      </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Series</h2>
+      <table class="table table-sm">
+        <thead class="thead-dark">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Channel</th>
+            <th>Season</th>
+          </tr>
+        </thead>
+          <!-- Mostrar este body que se poblará con las Series-->
+          <tbody id="Series">
+          </tbody>
+      </table>
+      <table>
+        <tbody id="seasonAverage">
+        </tbody>
+      </table>
+      
+      </tbody>
+      </div>
+      <div id="serie-card" class="card">
+        <img id="serie-foto" src="#">
+        <h2 id="serie-name"></h2>
+        <p id="serie-info"></p>
+        <a id="serie-link" href ="#" target="_blank"></a>
+    </div>
+      
+  </div>
+
+  <script type="module" src="./scripts/Serie.js"></script>
+  <script type="module" src="./scripts/dataSerie.js"></script>
+   <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>
