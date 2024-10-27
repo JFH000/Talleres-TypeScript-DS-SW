@@ -7,6 +7,8 @@ let seriesTbody: HTMLElement = document.getElementById('Series')!;
 let seasonAverageTbody: HTMLElement = document.getElementById('seasonAverage')!;
 let infoTbody: HTMLElement = document.getElementById('info')!;
 
+let startLink = 'https://cors-anywhere.herokuapp.com/';
+
 const card = document.getElementById('serie-card') as HTMLElement;
 const foto = document.getElementById('serie-foto') as HTMLImageElement;
 const name = document.getElementById('serie-name') as HTMLElement;
@@ -72,7 +74,7 @@ function renderCard(serieId:number){
     const serie = series[serieId-1];
     console.log(`link : ${serie.name}`);
     if(serie){
-        foto.src = serie.url_2;
+        foto.src = serie.url_2.replace("https://i.", "https://").replace(/\.jpg$/, "");
         name.textContent = serie.name;
         info.textContent = serie.description;
         link.href = serie.url_1

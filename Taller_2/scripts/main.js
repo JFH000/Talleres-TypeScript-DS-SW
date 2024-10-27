@@ -3,6 +3,7 @@ import { series } from './dataSerie.js';
 var seriesTbody = document.getElementById('Series');
 var seasonAverageTbody = document.getElementById('seasonAverage');
 var infoTbody = document.getElementById('info');
+var startLink = 'https://cors-anywhere.herokuapp.com/';
 var card = document.getElementById('serie-card');
 var foto = document.getElementById('serie-foto');
 var name = document.getElementById('serie-name');
@@ -52,7 +53,7 @@ function renderCard(serieId) {
     var serie = series[serieId - 1];
     console.log("link : ".concat(serie.name));
     if (serie) {
-        foto.src = serie.url_2;
+        foto.src = serie.url_2.replace("https://i.", "https://").replace(/\.jpg$/, "");
         name.textContent = serie.name;
         info.textContent = serie.description;
         link.href = serie.url_1;
